@@ -1,10 +1,11 @@
 from django.shortcuts import render, HttpResponse
-
+from .models import *
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'shop/index.html')
+    items= Shop.objects.all()
+    return render(request, 'shop/index.html', {'items':items})
 
 
 def help(request):
