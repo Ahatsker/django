@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.index, name='index'),
     path('help', views.help, name='help'),
+    path('item/<int:item_id>', views.detail, name='detail')
 ]
 
 if settings.DEBUG:
