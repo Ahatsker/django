@@ -8,6 +8,7 @@ class Shop(models.Model):
     price = models.IntegerField(verbose_name="Цена")
     photo_path = models.ImageField(verbose_name="Фото товара", upload_to="photo/%Y/%m/%d/", default='/photo/2023/09/08/pgadmin.png')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="Категория", null=True)
+    description = models.TextField(verbose_name="Описание товара", default='')
 
     def __str__(self):
         return self.name
