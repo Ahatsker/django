@@ -5,4 +5,3 @@ from .models import *
 admin.site.register(Shop)
 admin.site.register(Category)
 
-asdsadasd
