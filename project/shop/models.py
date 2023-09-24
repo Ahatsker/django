@@ -1,9 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
-
-
 class Shop(models.Model):
     name = models.CharField(verbose_name="Название товара", max_length=60)
     price = models.IntegerField(verbose_name="Цена")
