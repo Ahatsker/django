@@ -13,6 +13,7 @@ class Shop(models.Model):
     description = models.TextField(verbose_name="Описание товара", default='')
     arrival_date = models.DateField(verbose_name='Дата прибытия товара', auto_now=True)
     update_time = models.DateTimeField(verbose_name='Время последнего обновления карточки товара', auto_now=True)
+    image_url = models.URLField(null=True)
 
     def __str__(self):
         return self.name
