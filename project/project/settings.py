@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o%@i54u2arq%p3=^_azrm%)2lmttg9ag3=fl9^oe%bu*f1%lw3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CART_SESSION_ID = 'carts'
 
