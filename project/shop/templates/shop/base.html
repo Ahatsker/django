@@ -188,7 +188,7 @@
             {% with total_items=cart|length %}
             {% if cart|length > 0%}
             В корзине:
-            <a href="{% url 'cart:cart_detail' %}">
+            <a href="{%url 'carts:carts_detail'%}">
               {{total_items}} шт, {{cart.get_total_price}} Тг
             </a>
             {%else%}

@@ -23,14 +23,14 @@
         <tr>
             <td>
                 <a href="{{product.get_absolute_url}}">
-                    <img src="{{product.photo_path}}">
+                    <img src="/media/{{product.photo_path}}" height="300"  width="500" style="margin: 50 px">
                 </a>
             </td>
             <td>
                 {{product.name}}
             </td>
             <td>
-                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                <form action="{% url 'cart:carts_add' product.id %}" method="post">
                     {{item.update_quantity_form.quantity}}
                     {{item.update_quantity_form.update}}
                     <input type="submit" value="Обновить">
@@ -38,7 +38,7 @@
                 </form>
             </td>
             <td>
-                <a href="{% url 'cart:cart_remove' product.id %}">Удалить</a>
+                <a href="{% url 'cart:carts_remove' product.id %}">Удалить</a>
             </td>
             <td>
                 {{item.quantity}}
@@ -47,7 +47,7 @@
                 {{item.price}} Тг
             </td>
             <td class="num">
-                {{item.total.price}} Тг
+                {{item.total_price}} Тг
             </td>
         </tr>
         {%endwith%}
@@ -62,7 +62,7 @@
 
 <p class="text-right">
     <a href="{% url 'shop:index' %}">Продолжить покупки</a>
-    <a href="#">Оформить заказ</a>
+    <a href="{% url 'carts:carts_buy' %}">Оформить заказ</a>
 </p>
 
 {%endblock%}

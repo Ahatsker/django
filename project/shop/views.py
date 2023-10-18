@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import *
+from carts.forms import CartAddProductForm
 
 
 # Create your views here.
@@ -16,7 +17,8 @@ def help(request):
 def detail(request, item_id):
     try:
         item: object = Shop.objects.get(id=item_id)
+        cart_product_form = CartAddProductForm()
     except:
         return redirect(index, permanent=True)
 
-    return render(request, 'shop/detail.html', {'item': item})
+    return render(request, 'shop/detail.html', {'item': item, 'cart_product_form': cart_product_form})

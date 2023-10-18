@@ -17,8 +17,8 @@ class Shop(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('shop.detail', kwargs={'item_id': self.pk, })
+    # def get_absolute_url(self):
+    #     return reverse('shop.detail', kwargs={'item_id': self.pk, })
 
     class Meta:
         verbose_name = "Товар"
